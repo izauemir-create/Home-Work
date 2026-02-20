@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Home Work 6</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
+</head>
+<body>
+
+<div class="container">
+
+  <h1 class="page-title">AGE CALCULATOR</h1>
+
+  <div class="input-card">
+    <label class="date-label" for="birthdate">// ДАТА РОЖДЕНИЯ</label>
+    <input class="date-input-field" type="date" id="birthdate"/>
+    <button class="calculate-btn" id="calculate-btn">РАССЧИТАТЬ ВОЗРАСТ</button>
+    <span class="error-message" id="error-message"></span>
+  </div>
+
+  <div class="result-grid">
+    <div class="result-card" id="card-years">
+      <span class="result-card-value" id="result-years">--</span>
+      <span class="result-card-label">ЛЕТ</span>
+    </div>
+    <div class="result-card" id="card-months">
+      <span class="result-card-value" id="result-months">--</span>
+      <span class="result-card-label">МЕСЯЦЕВ</span>
+    </div>
+    <div class="result-card" id="card-days">
+      <span class="result-card-value" id="result-days">--</span>
+      <span class="result-card-label">ДНЕЙ</span>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

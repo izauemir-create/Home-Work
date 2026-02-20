@@ -1,0 +1,222 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #00ff88;
+  --green-dim: #00ff8844;
+  --bg: #0a0a0a;
+  --card-bg: #111;
+  --border: #1a1a1a;
+  --text: #ccc;
+  --error: #ff4455;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px),
+  linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+}
+
+.page-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  color: var(--green);
+  text-align: center;
+  letter-spacing: 0.15em;
+  margin-bottom: 32px;
+  text-shadow: 0 0 20px var(--green-dim);
+}
+
+.input-card {
+  background: var(--card-bg);
+  border: 1px solid #222;
+  border-top: 2px solid var(--green);
+  padding: 28px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.input-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+}
+
+.date-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.date-input-field {
+  width: 100%;
+  background: #0d0d0d;
+  border: 1px solid #333;
+  color: var(--green);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.date-input-field:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 10px var(--green-dim);
+}
+ /*Календарь*/
+.date-input-field::-webkit-calendar-picker-indicator {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(100deg);
+  cursor: pointer;
+}
+
+.calculate-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.calculate-btn:hover {
+  background: var(--green-dim);
+  box-shadow: 0 0 20px var(--green-dim);
+}
+
+.calculate-btn:active {
+  transform: scale(0.98);
+}
+
+ /*блик*/
+.calculate-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.15), transparent);
+  transition: left 0.4s;
+}
+
+.calculate-btn:hover::after {
+  left: 150%;
+}
+
+.error-message {
+  display: none;
+  color: var(--error);
+  font-size: 0.8rem;
+  margin-top: 10px;
+  letter-spacing: 0.05em;
+}
+
+.error-message.visible {
+  display: block;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.result-card {
+  background: var(--card-bg);
+  border: 1px solid #222;
+  border-top: 2px solid var(--green);
+  padding: 20px 14px;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.result-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+}
+
+.result-card-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--green);
+  text-shadow: 0 0 15px var(--green-dim);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.result-card-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: #555;
+  text-transform: uppercase;
+}
