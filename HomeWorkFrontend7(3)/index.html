@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Hall of Legends — Authorization</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+
+  <div class="top-logo">Hall of Legends</div>
+
+  <div class="bg-paintings">
+
+    <div class="painting">
+      <!-- Александр Македонский — мозаика из Помпей -->
+      <img
+        src="img/b2ea37e4b51b41e62509b6b22803bdaf.jpg"
+        alt="Alexander the Great"
+        onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Alexander_the_Great_mosaic.jpg/800px-Alexander_the_Great_mosaic.jpg'"
+      >
+      <div class="painting-label">
+        <div class="name">Alexander the Great</div>
+        <div class="years">356 BC — 323 BC</div>
+      </div>
+    </div>
+
+    <div class="painting">
+      <!-- Гай Юлий Цезарь -->
+      <img
+        src="img/b02057940abd310eaf6bc349fd4faf78.jpg"
+        alt="Gaius Julius Caesar"
+      >
+      <div class="painting-label">
+        <div class="name">Gaius Julius Caesar</div>
+        <div class="years">100 BC — 44 BC</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="center-shadow"></div>
+
+  <!-- форма входа -->
+  <div class="auth-card">
+    <div class="auth-logo">Authorized Access</div>
+    <div class="auth-divider"><span>✦</span></div>
+    <div class="auth-title">Enter the Hall</div>
+
+    <div class="field">
+      <input type="text" id="login" placeholder="LOGIN" autocomplete="off">
+    </div>
+    <div class="field">
+      <input type="password" id="password" placeholder="PASSWORD">
+    </div>
+
+    <button class="btn-enter" id="loginBtn">Enter</button>
+
+    <div class="hint">
+      Try: The_Last_Frontier / 356 BC—323 BC<br>
+      or: White_Horse / 100 BC—44 BC
+    </div>
+  </div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
