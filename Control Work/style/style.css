@@ -1,0 +1,18 @@
+#winter{
+  background-image: -webkit-repeating-linear-gradient(#0021ff, rgba(24, 216, 220, 0.45), rgba(73, 12, 73, 0.68));
+
+}
+#spring{
+  background-image: -webkit-repeating-linear-gradient(#378c0c, rgba(255, 255, 0, 0.64), rgba(0, 0, 255, 0.27));
+
+}
+#autumn{
+  background-image: -webkit-repeating-linear-gradient(orange , yellow , rgba(0, 0, 255, 0.63));
+}
+#summer{
+  background-image: -webkit-repeating-linear-gradient(#10e834, yellow , rgba(0, 0, 255, 0.68));
+
+}
+
+
+
